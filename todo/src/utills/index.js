@@ -1,9 +1,19 @@
 const local = 'http://localhost:3000'
 
 export const all = async () => {
-  const response = await fetch(`${local}/all`);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(`${local}/all`);
+    if (!response.ok) {
+      throw new Error("네트워크 응답이 OK가 아님");
+    }
+    const data = await response.json();
+    sessionStorage.setItem('todo', JSON.stringify(data));
+    return data;
+  } catch (error) {
+    console.error("취득에 문제가 있었습니다:", error);
+    const sessionData = JSON.parse(sessionStorage.getItem('todo'));
+    return sessionData || [];
+  }
 };
 
 export const checkData = (id, done) => {
