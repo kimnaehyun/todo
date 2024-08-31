@@ -1,0 +1,1 @@
+h1{padding-top:2vh;display:flex;justify-content:center}*{margin:0;padding:0}.nav{font-size:20px;padding:2vh;display:flex;justify-content:space-around;border-bottom:1px solid #000}.nav .router-link-exact-active{color:red;text-decoration-line:none}.nav a{color:#000;text-decoration-line:none}
