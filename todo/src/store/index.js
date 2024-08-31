@@ -5,7 +5,7 @@ const localStorage = await all();
 const sessionData = JSON.parse(sessionStorage.getItem('todo'))
 export default createStore({
   state: {
-    todos: sessionData || localStorage
+    todos: sessionData || localStorage || []
 
   },
   mutations: {
